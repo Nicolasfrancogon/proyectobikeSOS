@@ -1,0 +1,356 @@
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: #1e1e1e;
+  font-size: 0.95rem;
+}
+
+.header-user a {
+  background: #1e1e1e;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.header-user a:hover {
+  background: #333;
+}
+
+.dashboard {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dash-card {
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.dash-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #f0f0f0;
+}
+
+.dash-card > p {
+  color: #888;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #aaa;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #2e2e2e;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border 0.2s;
+  background: #111;
+  color: #f0f0f0;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-color: #ff6a00;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-primary {
+  background: #ff6a00;
+  color: #fff;
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover { background: #e05a00; }
+
+.btn-secondary {
+  background: #2a2a2a;
+  color: #f0f0f0;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover { background: #333; }
+
+.hidden { display: none !important; }
+
+/* Tracking */
+.tracking-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.status-icon { font-size: 2.5rem; }
+
+.pulse-ring {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff6a00;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255,106,0,0.5); }
+  70%  { box-shadow: 0 0 0 12px rgba(255,106,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,106,0,0); }
+}
+
+#trackingMsg {
+  text-align: center;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.tracking-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.track-step {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  background: #111;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.4s;
+}
+
+.track-step.active {
+  background: rgba(255,106,0,0.15);
+  color: #ff6a00;
+  font-weight: 600;
+}
+
+/* Mecánico */
+.mecanico-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+}
+
+.toggle input { display: none; }
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 26px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle input:checked + .slider { background: #ff6a00; }
+.toggle input:checked + .slider::before { transform: translateX(22px); }
+
+.solicitud-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1.5px solid #2a2a2a;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  gap: 1rem;
+  background: #111;
+}
+
+.sol-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.sol-info strong {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.btn-aceptar {
+  white-space: nowrap;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* ── PERFIL MECANICO ── */
+.perfil-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.perfil-avatar {
+  font-size: 3rem;
+  background: #111;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255,106,0,0.3);
+  flex-shrink: 0;
+}
+
+.perfil-info h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 0.3rem;
+}
+
+.perfil-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.perfil-stars { color: #ff6a00; font-size: 0.9rem; }
+
+.perfil-rating span { font-size: 0.9rem; color: #aaa; }
+
+.perfil-badge {
+  display: inline-block;
+  background: rgba(255,106,0,0.1);
+  color: #ff6a00;
+  border: 1px solid rgba(255,106,0,0.25);
+  border-radius: 20px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.muted { color: #aaa; font-size: 0.9rem; }
+
+/* ── ESTRELLAS ── */
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.star {
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.15s;
+}
+
+.star:hover,
+.star.active {
+  color: #ff6a00;
+  transform: scale(1.2);
+}
+
+/* ── PAGO ── */
+.pago-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pago-icon { font-size: 2rem; }
+
+.monto-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,106,0,0.08);
+  border: 1.5px solid rgba(255,106,0,0.25);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin: 1.2rem 0;
+}
+
+.monto-box span { color: #888; font-size: 0.95rem; }
+.monto-box strong { font-size: 1.6rem; color: #ff6a00; }
+
+.pago-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.pago-row .input-group { flex: 1; }
+
+@media (max-width: 600px) {
+  .solicitud-card { flex-direction: column; align-items: flex-start; }
+  .pago-row { flex-direction: column; }
+}

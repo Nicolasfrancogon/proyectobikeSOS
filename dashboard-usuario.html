@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BikeSOS | Panel Ciclista</title>
+  <link rel="icon" type="image/png" href="./imagenes/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="./index.html"><img src="./imagenes/logo.png" alt="BikeSOS" class="logo"></a>
+  <div class="header-user">
+    <span>👋 Hola, <strong id="userName"></strong></span>
+    <a href="./index.html">Inicio</a>
+    <a href="./login.html" id="btnLogout">Salir</a>
+  </div>
+</header>
+
+<main class="dashboard">
+
+  <section class="dash-card" id="sectionRequest">
+    <h2>¿Necesitás ayuda?</h2>
+    <p>Completá los datos y un mecánico irá hasta donde estés.</p>
+
+    <div class="input-group">
+      <label>📍 Tu ubicación</label>
+      <input type="text" id="ubicacion" placeholder="Ej: Av. Corrientes 1234, CABA">
+    </div>
+    <div class="input-group">
+      <label>🔧 ¿Qué problema tenés?</label>
+      <select id="problema">
+        <option value="">Seleccioná un problema</option>
+        <option value="rueda pinchada">Rueda pinchada</option>
+        <option value="cadena rota">Cadena rota o salida</option>
+        <option value="frenos">Frenos sin respuesta</option>
+        <option value="cambios">Cambios trabados</option>
+        <option value="otro">Otro problema</option>
+      </select>
+    </div>
+
+    <div class="input-group hidden" id="campoRodado">
+      <label>🔵 Rodado de la bicicleta</label>
+      <select id="rodado">
+        <option value="">Seleccioná el rodado</option>
+        <option>Rodado 12</option>
+        <option>Rodado 16</option>
+        <option>Rodado 20</option>
+        <option>Rodado 24</option>
+        <option>Rodado 26</option>
+        <option>Rodado 27.5</option>
+        <option>Rodado 29</option>
+        <option>Rodado 700c</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label>📝 Detalle adicional (opcional)</label>
+      <textarea id="detalle" placeholder="Contanos más sobre el problema..."></textarea>
+    </div>
+
+    <button class="btn-primary" id="btnSolicitar">🚨 Solicitar mecánico ahora</button>
+  </section>
+
+  <section class="dash-card hidden" id="sectionTracking">
+    <div class="tracking-status">
+      <div class="pulse-ring"></div>
+      <span class="status-icon">🛠️</span>
+    </div>
+    <h2>Mecánico en camino</h2>
+    <p id="trackingMsg">Buscando mecánico disponible...</p>
+
+    <div class="tracking-steps">
+      <div class="track-step active" id="ts1">✅ Solicitud enviada</div>
+      <div class="track-step" id="ts2">⏳ Mecánico asignado</div>
+      <div class="track-step" id="ts3">🚴 Mecánico en camino</div>
+      <div class="track-step" id="ts4">🎉 ¡Mecánico llegó!</div>
+    </div>
+
+    <button class="btn-secondary" id="btnCancelar">Cancelar solicitud</button>
+  </section>
+
+  <section class="dash-card hidden" id="sectionPago">
+    <div class="pago-header">
+      <span class="pago-icon">💳</span>
+      <h2>Pago del servicio</h2>
+    </div>
+    <p>El mecánico completó el trabajo. Realizá el pago para finalizar.</p>
+    <div class="monto-box">
+      <span>Total a pagar</span>
+      <strong id="montoPagar"></strong>
+    </div>
+    <div class="input-group">
+      <label>Número de tarjeta</label>
+      <input type="text" id="numTarjeta" placeholder="1234 5678 9012 3456" maxlength="19">
+    </div>
+    <div class="pago-row">
+      <div class="input-group">
+        <label>Vencimiento</label>
+        <input type="text" id="vencimiento" placeholder="MM/AA" maxlength="5">
+      </div>
+      <div class="input-group">
+        <label>CVV</label>
+        <input type="text" id="cvv" placeholder="123" maxlength="3">
+      </div>
+    </div>
+    <button class="btn-primary" id="btnPagar">💳 Confirmar pago</button>
+  </section>
+
+  <section class="dash-card hidden" id="sectionCalificacion">
+    <div style="text-align:center; padding:0.5rem 0">
+      <span style="font-size:2.5rem">⭐</span>
+      <h2 style="margin-top:0.8rem">Calificá al mecánico</h2>
+      <p style="color:#888; margin-top:0.4rem">Tu opinión ayuda a mejorar el servicio</p>
+      <div class="stars" style="margin:1.2rem 0">
+        <span class="star" data-val="1">★</span>
+        <span class="star" data-val="2">★</span>
+        <span class="star" data-val="3">★</span>
+        <span class="star" data-val="4">★</span>
+        <span class="star" data-val="5">★</span>
+      </div>
+      <button class="btn-primary" id="btnEnviarCalif" disabled>Enviar calificación</button>
+    </div>
+  </section>
+
+  <section class="dash-card" id="sectionHistorial">
+    <h2>Historial de servicios</h2>
+    <div id="listaHistorial"><p style="color:#666">Aún no tenés servicios registrados.</p></div>
+  </section>
+
+</main>
+
+<script src="./js/utils.js"></script>
+<script src="./js/dashboard-usuario.js"></script>
+</body>
+</html>

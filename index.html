@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BikeSOS – Pedí ayuda mecánica para tu bici al instante. Un mecánico va hasta donde estés.">
+  <title>BikeSOS | Ayuda mecánica para ciclistas</title>
+  <link rel="icon" type="image/png" href="./imagenes/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<header class="header">
+  <a href="./index.html"><img src="./imagenes/logo.png" alt="BikeSOS logo" class="logo"></a>
+  <nav>
+    <a href="#hero">Inicio</a>
+    <a href="#steps">Cómo funciona</a>
+    <a href="#stats">Estadísticas</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#quienes">Quiénes somos</a>
+    <a href="./login.html">Ingresar</a>
+    <button class="theme-toggle" id="themeToggle" title="Cambiar tema">🌙</button>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-text fade-in">
+    <span class="badge">🚨 Disponible 24/7</span>
+    <h1>¿Te quedaste tirado con la bici?</h1>
+    <p class="eslogan">Nunca pares de pedalear.</p>
+    <p>Pedí ayuda y un mecánico va hasta donde estés en minutos.</p>
+    <button id="btnHelp">Pedir ayuda ahora</button>
+  </div>
+  <div class="hero-image fade-in-delay">
+    <img src="./imagenes/muestra.png" alt="Mockup App BikeSOS">
+  </div>
+</section>
+
+<section class="timeline" id="steps">
+  <h2 class="timeline-title">¿Cómo funciona?</h2>
+  <div class="timeline-container">
+    <div class="timeline-line"></div>
+    <div class="timeline-item" data-step="1">
+      <div class="timeline-dot">📍</div>
+      <div class="timeline-card">
+        <h3>Indicá tu ubicación</h3>
+        <p>Compartí dónde estás con un toque y encontramos el mecánico más cercano.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-step="2">
+      <div class="timeline-dot">🛠️</div>
+      <div class="timeline-card">
+        <h3>Un mecánico acepta</h3>
+        <p>El mecánico más cercano recibe tu solicitud y confirma en segundos.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-step="3">
+      <div class="timeline-dot">🚴</div>
+      <div class="timeline-card">
+        <h3>Seguimiento en tiempo real</h3>
+        <p>Sabés exactamente cuándo llega y podés cancelar en cualquier momento.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-step="4">
+      <div class="timeline-dot">💳</div>
+      <div class="timeline-card">
+        <h3>Pago seguro al finalizar</h3>
+        <p>Pagás solo cuando el trabajo está hecho. Rápido, simple y seguro.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-step="5">
+      <div class="timeline-dot">⭐</div>
+      <div class="timeline-card">
+        <h3>Calificá el servicio</h3>
+        <p>Tu opinión ayuda a mejorar la comunidad. Calificá al mecánico con estrellas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTADISTICAS -->
+<section class="stats" id="stats">
+  <div class="stats-grid">
+    <div class="stat-item fade-scroll">
+      <span class="stat-num" data-target="500">0</span>
+      <span class="stat-plus">+</span>
+      <p>Ciclistas registrados</p>
+    </div>
+    <div class="stat-item fade-scroll">
+      <span class="stat-num" data-target="200">0</span>
+      <span class="stat-plus">+</span>
+      <p>Mecánicos verificados</p>
+    </div>
+    <div class="stat-item fade-scroll">
+      <span class="stat-num" data-target="1200">0</span>
+      <span class="stat-plus">+</span>
+      <p>Servicios completados</p>
+    </div>
+    <div class="stat-item fade-scroll">
+      <span class="stat-num" data-target="98">0</span>
+      <span class="stat-plus">%</span>
+      <p>Clientes satisfechos</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios" id="testimonios">
+  <h2 class="section-title">Lo que dicen nuestros usuarios</h2>
+  <div class="testimonios-grid">
+    <div class="testimonio-card fade-scroll">
+      <div class="testimonio-stars">★★★★★</div>
+      <p>"Me quedé con la rueda pinchada a 10km de casa. En 8 minutos ya tenía un mecánico al lado mío. Increíble servicio."</p>
+      <div class="testimonio-autor">
+        <span class="autor-avatar">👤</span>
+        <div>
+          <strong>Martín G.</strong>
+          <span>Ciclista urbano</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonio-card fade-scroll">
+      <div class="testimonio-stars">★★★★★</div>
+      <p>"Como mecánico, BikeSOS me permitió conseguir clientes nuevos todos los días. La app es muy fácil de usar."</p>
+      <div class="testimonio-autor">
+        <span class="autor-avatar">👤</span>
+        <div>
+          <strong>Carlos R.</strong>
+          <span>Mecánico verificado</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonio-card fade-scroll">
+      <div class="testimonio-stars">★★★★★</div>
+      <p>"El pago es seguro y el seguimiento en tiempo real me dio mucha tranquilidad. Lo recomiendo a todos los ciclistas."</p>
+      <div class="testimonio-autor">
+        <span class="autor-avatar">👤</span>
+        <div>
+          <strong>Laura P.</strong>
+          <span>Ciclista de ruta</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quienes" id="quienes">
+  <div class="quienes-container">
+    <div class="quienes-text">
+      <span class="badge">🚴 Nuestra historia</span>
+      <h2>Quiénes somos</h2>
+      <p>BikeSOS nació para que ningún ciclista quede tirado en la calle. Conectamos ciclistas con mecánicos verificados en minutos, sin llamadas, sin esperas.</p>
+      <p class="quienes-frase">"Porque pedalear no debería tener límites."</p>
+    </div>
+    <div class="quienes-valores">
+      <div class="valor-card">
+        <span>🚴</span>
+        <div>
+          <h4>Comunidad</h4>
+          <p>Somos ciclistas ayudando ciclistas</p>
+        </div>
+      </div>
+      <div class="valor-card">
+        <span>⚡</span>
+        <div>
+          <h4>Rapidez</h4>
+          <p>Respuesta en minutos, no en horas</p>
+        </div>
+      </div>
+      <div class="valor-card">
+        <span>🔒</span>
+        <div>
+          <h4>Confianza</h4>
+          <p>Mecánicos verificados y pagos seguros</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  © 2026 BikeSOS – Todos los derechos reservados
+</footer>
+
+<script src="./js/utils.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="./js/bg-canvas.js"></script>
+<script src="./js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BikeSOS | Panel Mecánico</title>
+  <link rel="icon" type="image/png" href="./imagenes/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="./index.html"><img src="./imagenes/logo.png" alt="BikeSOS" class="logo"></a>
+  <div class="header-user">
+    <span>🛠️ Hola, <strong id="userName"></strong></span>
+    <a href="./index.html">Inicio</a>
+    <a href="./login.html" id="btnLogout">Salir</a>
+  </div>
+</header>
+
+<main class="dashboard">
+
+  <!-- PERFIL MECANICO -->
+  <section class="dash-card perfil-card">
+    <div class="perfil-avatar">🛠️</div>
+    <div class="perfil-info">
+      <h2 id="perfilNombre"></h2>
+      <div class="perfil-rating">
+        <span class="perfil-stars">★★★★★</span>
+        <span id="perfilCalif">5.0</span>
+        <span style="color:#666">promedio</span>
+      </div>
+      <span class="perfil-badge" id="perfilMovilidad"></span>
+    </div>
+  </section>
+
+  <section class="dash-card">
+    <div class="mecanico-status">
+      <span>Estado:</span>
+      <label class="toggle">
+        <input type="checkbox" id="toggleDisponible" checked>
+        <span class="slider"></span>
+      </label>
+      <span id="statusLabel">Disponible</span>
+    </div>
+  </section>
+
+  <section class="dash-card" id="sectionSolicitudes">
+    <h2>Solicitudes entrantes</h2>
+    <p class="muted" id="noSolicitudes">Esperando solicitudes...</p>
+    <div id="listaSolicitudes"></div>
+  </section>
+
+  <section class="dash-card hidden" id="sectionTrabajo">
+    <h2>Trabajo en curso</h2>
+    <div id="trabajoDetalle"></div>
+    <div class="tracking-steps">
+      <div class="track-step active" id="ms1">✅ Solicitud aceptada</div>
+      <div class="track-step" id="ms2">🚴 En camino</div>
+      <div class="track-step" id="ms3">🔧 Reparando</div>
+      <div class="track-step" id="ms4">🎉 Trabajo completado</div>
+    </div>
+    <button class="btn-primary" id="btnAvanzar">Avanzar estado</button>
+    <button class="btn-primary" id="btnCobrar" style="display:none">💰 Cobrar servicio</button>
+    <button class="btn-secondary" id="btnCompletar" style="display:none">Marcar como completado</button>
+  </section>
+
+  <section class="dash-card hidden" id="sectionCobroEspera">
+    <div style="text-align:center; padding: 1rem 0">
+      <span style="font-size:3rem">⏳</span>
+      <h2 style="margin-top:1rem">Esperando pago del cliente</h2>
+      <p style="color:#777; margin-top:0.5rem">Se notificó al cliente. El pago llegará automáticamente.</p>
+      <div class="pulse-ring" style="margin: 1.5rem auto"></div>
+    </div>
+  </section>
+
+  <section class="dash-card hidden" id="sectionCalificacion">
+    <div style="text-align:center; padding:0.5rem 0">
+      <span style="font-size:2.5rem">⭐</span>
+      <h2 style="margin-top:0.8rem">Calificá al cliente</h2>
+      <p style="color:#888; margin-top:0.4rem">¿Cómo fue la experiencia?</p>
+      <div class="stars" style="margin:1.2rem 0">
+        <span class="star" data-val="1">★</span>
+        <span class="star" data-val="2">★</span>
+        <span class="star" data-val="3">★</span>
+        <span class="star" data-val="4">★</span>
+        <span class="star" data-val="5">★</span>
+      </div>
+      <button class="btn-primary" id="btnEnviarCalif" disabled>Enviar calificación</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="./js/utils.js"></script>
+<script src="./js/dashboard-mecanico.js"></script>
+</body>
+</html>

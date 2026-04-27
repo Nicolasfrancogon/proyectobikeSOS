@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BikeSOS | Ingresar</title>
+  <link rel="icon" type="image/png" href="./imagenes/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-card">
+  <img src="./imagenes/logo.png" alt="BikeSOS" class="auth-logo">
+  <h2>Bienvenido a BikeSOS</h2>
+  <p class="auth-subtitle">¿Cómo querés ingresar?</p>
+
+  <div class="role-selector">
+    <button class="role-btn active" data-role="usuario">
+      🚴 Soy ciclista
+    </button>
+    <button class="role-btn" data-role="mecanico">
+      🛠️ Soy mecánico
+    </button>
+  </div>
+
+  <div class="auth-tabs">
+    <button class="tab-btn active" data-tab="ingresar">Ingresar</button>
+    <button class="tab-btn" data-tab="registrar">Crear cuenta</button>
+  </div>
+
+  <!-- Ingresar -->
+  <form id="loginForm" class="auth-form">
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="tu@email.com" required>
+    </div>
+    <div class="input-group">
+      <label>Contraseña</label>
+      <input type="password" id="password" placeholder="••••••••" required>
+    </div>
+    <button type="submit" class="btn-primary" id="btnSubmit">Ingresar como ciclista</button>
+  </form>
+
+  <!-- Crear cuenta -->
+  <form id="registerForm" class="auth-form hidden">
+    <div class="input-group">
+      <label>Nombre completo</label>
+      <input type="text" id="regNombre" placeholder="Tu nombre" required>
+    </div>
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" id="regEmail" placeholder="tu@email.com" required>
+    </div>
+    <div class="input-group">
+      <label>Contraseña</label>
+      <input type="password" id="regPassword" placeholder="••••••••" required>
+    </div>
+    <div class="input-group">
+      <label>Confirmar contraseña</label>
+      <input type="password" id="regPassword2" placeholder="••••••••" required>
+    </div>
+
+    <!-- Solo visible para mecánicos -->
+    <div id="campoMovilidad" class="input-group hidden">
+      <label>🚲 Movilidad</label>
+      <select id="movilidad">
+        <option value="">Seleccioná tu movilidad</option>
+        <option value="bicicleta">Bicicleta</option>
+        <option value="moto">Moto</option>
+        <option value="auto">Auto</option>
+        <option value="a pie">A pie (zona cercana)</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn-primary" id="btnRegister">Crear cuenta como ciclista</button>
+  </form>
+
+  <a href="./index.html" class="auth-back">← Volver al inicio</a>
+</div>
+
+<script src="./js/utils.js"></script>
+<script src="./js/login.js"></script>
+</body>
+</html>
